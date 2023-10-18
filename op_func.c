@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * push_func_helper - Add new element to the stack
  * @num: number next to command

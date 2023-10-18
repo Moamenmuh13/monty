@@ -1,5 +1,5 @@
 #define _GNU_SOURCE
-#include "main.h"
+#include "monty.h"
 #include <stdlib.h>
 /**
  * excute_file - to excute already opened file
