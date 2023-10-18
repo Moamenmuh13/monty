@@ -1,11 +1,11 @@
 #include "main.h"
+stack_t *head = NULL;
 /**
  * main - entry point
  * @argc: number of arguments passed to the main func
  * @argv: array of argumetns passed
  * Return: 0 in case of success
  */
-stack_t *head = NULL;
 
 int main(int argc, char **argv)
 {
@@ -31,19 +31,4 @@ int main(int argc, char **argv)
 	fclose(fd);
 	free_stack();
 	return (0);
-}
-
-void free_stack(void)
-{
-	stack_t *tmp;
-
-	if (head == NULL)
-		return;
-
-	while (head != NULL)
-	{
-		tmp = head;
-		head = head->next;
-		free(tmp);
-	}
 }

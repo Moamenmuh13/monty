@@ -7,10 +7,8 @@
 #include <stdarg.h>
 #include <ctype.h>
 
-extern stack_t *head;
 #define STACK 0
 #define QUEUE 1
-
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -42,15 +40,20 @@ typedef struct instruction_s
 		void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+extern stack_t *head;
+typedef void (*func)(stack_t **, unsigned int);
 
 void excute_file(FILE *fd);
 void find_func(char *command, char *num, int line);
-void excute_func(void (*f)(stack_t **stack, unsigned int line_number), char *num);
+void excute_func(char *command, func function, char *num, unsigned int line);
+void free_stack(void);
+stack_t *create_node(int number);
 
 
 /* opcode functions */
 void push_func(stack_t **stack, unsigned int line_number);
+void push_func_helper(char *num, unsigned int line, func function);
 void pall_func(stack_t **stack, unsigned int line_number);
-void pop_func(stack_t **stack, unsigned int line_number);
+void pop_from_stack(stack_t **stack, unsigned int line_number);
 
 #endif

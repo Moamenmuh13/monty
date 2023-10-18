@@ -46,7 +46,7 @@ void find_func(char *command, char *num, int line)
 	{
 		if (strcmp(functions[i].opcode, command) == 0)
 		{
-			excute_func(functions[i].f, num);
+			excute_func(command, functions[i].f, num, line);
 			flag = 1;
 			break;
 		}
@@ -55,5 +55,24 @@ void find_func(char *command, char *num, int line)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s", line, command);
 		exit(EXIT_FAILURE);
+	}
+}
+/**
+ * excute_func - to excute the called function
+ * @command: the command
+ * @function: the function for the found command
+ * @num: the number next to the command
+ * @line: the line number
+ * Return: none
+*/
+void excute_func(char *command, func function, char *num, unsigned int line)
+{
+	if (strcmp(command, "push") == 0)
+	{
+		push_func_helper(num, line, function);
+	}
+	else
+	{
+		function(&head, line);
 	}
 }
