@@ -24,7 +24,7 @@ void excute_file(FILE *fd)
 			return;
 		num = strtok(NULL, " \n");
 
-		find_func(command, num, i);
+		find_func(command, num, i + 1);
 	}
 	free(line);
 
@@ -53,7 +53,7 @@ void find_func(char *command, char *num, int line)
 	}
 	if (flag == 0)
 	{
-		fprintf(stderr, "L%d: unknown instruction %s", line, command);
+		fprintf(stderr, "L%d: unknown instruction %s\n", line, command);
 		exit(EXIT_FAILURE);
 	}
 }
