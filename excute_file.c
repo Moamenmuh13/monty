@@ -17,6 +17,7 @@ void excute_file(FILE *fd)
 		if (line == NULL)
 		{
 			fprintf(stderr, "Error: malloc failed\n");
+			free_stack();
 			exit(EXIT_FAILURE);
 		}
 		command = strtok(line, " \n");
@@ -40,9 +41,10 @@ void excute_file(FILE *fd)
 void find_func(char *command, char *num, int line)
 {
 	int i, flag = 0;
-	instruction_t functions[] = {{"push", push_func}, {"pall", pall_func}};
+	instruction_t functions[] = {{"push", push_func}, {"pall", pall_func},
+	{"pop", pop_from_stack}};
 
-	for (i = 0; i < 2; i++)
+	for (i = 0; i < 3; i++)
 	{
 		if (strcmp(functions[i].opcode, command) == 0)
 		{
@@ -54,6 +56,7 @@ void find_func(char *command, char *num, int line)
 	if (flag == 0)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line, command);
+		free_stack();
 		exit(EXIT_FAILURE);
 	}
 }

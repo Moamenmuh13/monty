@@ -13,6 +13,7 @@ void push_func_helper(char *num, unsigned int line, func function)
 	if (num == NULL)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line);
+		free_stack();
 		exit(EXIT_FAILURE);
 	}
 	if (num[0] == '-')
@@ -25,6 +26,7 @@ void push_func_helper(char *num, unsigned int line, func function)
 		if (isdigit(num[i]) == 0)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line);
+			free_stack();
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -84,16 +86,20 @@ void pall_func(stack_t **stack, unsigned int line)
  */
 void pop_from_stack(stack_t **stack, unsigned int line)
 {
-	stack_t *tmp;
-	(void)line;
+	stack_t *temp;
 
 	if (stack == NULL || *stack != NULL)
-		/*handel error message*/
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line);
+		free_stack();
+		exit(EXIT_FAILURE);
+	}
 
-		tmp = *stack;
-	*stack = tmp->next;
+	temp = *stack;
+	*stack = temp->next;
 	if (*stack != NULL)
+	{
 		(*stack)->prev = NULL;
-
-	free(tmp);
+	}
+	free(temp);
 }

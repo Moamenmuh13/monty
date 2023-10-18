@@ -5,16 +5,17 @@
  */
 void free_stack(void)
 {
-	stack_t *tmp;
+	stack_t *temp;
 
-	if (head == NULL)
+	if (!head)
+	{
 		return;
-
+	}
 	while (head != NULL)
 	{
-		tmp = head;
+		temp = head;
 		head = head->next;
-		free(tmp);
+		free(temp);
 	}
 }
 /**
@@ -31,6 +32,7 @@ stack_t *create_node(int number)
 	{
 		free(node);
 		fprintf(stderr, "Error: malloc failed\n");
+		free_stack();
 		exit(EXIT_FAILURE);
 	}
 	node->next = NULL;
