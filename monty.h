@@ -55,5 +55,6 @@ void push_func(stack_t **stack, unsigned int line_number);
 void push_func_helper(char *num, unsigned int line, func function);
 void pall_func(stack_t **stack, unsigned int line_number);
 void pop_from_stack(stack_t **stack, unsigned int line_number);
+void nop_func(stack_t **stack, unsigned int line_number);
 
 #endif

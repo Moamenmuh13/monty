@@ -103,3 +103,14 @@ void pop_from_stack(stack_t **stack, unsigned int line)
 	}
 	free(temp);
 }
+
+/**
+ * nop_func - Remove an element from the stack
+ * @stack: Pointer of the pointer of the stack
+ * @line: Number of the line
+ */
+void nop_func(stack_t **stack, unsigned int line)
+{
+	(void)stack;
+	(void)line;
+}

@@ -42,9 +42,9 @@ void find_func(char *command, char *num, int line)
 {
 	int i, flag = 0;
 	instruction_t functions[] = {{"push", push_func}, {"pall", pall_func},
-	{"pop", pop_from_stack}};
+	{"pop", pop_from_stack}, {"nop", nop_func}};
 
-	for (i = 0; i < 3; i++)
+	for (i = 0; i < 4; i++)
 	{
 		if (strcmp(functions[i].opcode, command) == 0)
 		{
