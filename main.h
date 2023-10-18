@@ -7,6 +7,11 @@
 #include <stdarg.h>
 #include <ctype.h>
 
+extern stack_t *head;
+#define STACK 0
+#define QUEUE 1
+
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -46,4 +51,6 @@ void excute_func(void (*f)(stack_t **stack, unsigned int line_number), char *num
 /* opcode functions */
 void push_func(stack_t **stack, unsigned int line_number);
 void pall_func(stack_t **stack, unsigned int line_number);
+void pop_func(stack_t **stack, unsigned int line_number);
+
 #endif
