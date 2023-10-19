@@ -6,7 +6,6 @@ This repository contains a collection of C programs and data structures related 
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Contents](#contents)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -14,6 +13,16 @@ This repository contains a collection of C programs and data structures related 
 ## Introduction
 
 Stacks and queues are fundamental data structures used in computer science and programming. This repository provides examples and implementations of these data structures in the C programming language.
+
+## Usage
+
+To use or explore the provided code and examples, follow these steps:
+1. Clone this repository to your local machine:
+
+git clone https://github.com/Moamenmuh13/monty.git
+
+
+
 
 
 ## Authors
