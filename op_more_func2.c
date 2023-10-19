@@ -101,6 +101,7 @@ void pchar_func(stack_t **stack, unsigned int line)
 	}
 	printf("%c\n", (*stack)->n);
 }
+
 /**
  * pstr_func - convert the ascii to text
  * @stack: pointer the curret node in the stack
