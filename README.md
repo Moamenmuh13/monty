@@ -31,10 +31,7 @@ Contributions to this repository are welcome. If you have improvements, bug fixe
 ## License
 This project is open-source and available under the MIT License. You are free to use and modify the code for your own projects.
 
-
 ## Authors
 
 - [Moamenmuh13]
 - [ShihabIbrahem74]
-
-## GitHub Repository
