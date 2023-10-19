@@ -39,7 +39,7 @@ void excute_file(FILE *fd)
  */
 void find_func(char *command, char *num, int line)
 {
-	int i, flag, num_functions = 0;
+	int i, flag = 0, num_functions = 0;
 	instruction_t functions[] = {
 			{"push", push_func}, {"pall", pall_func}, {"pint", pint_func},
 			{"pop", pop_from_stack}, {"swap", swap_func}, {"add", add_func},
@@ -56,7 +56,6 @@ void find_func(char *command, char *num, int line)
 		{
 			excute_func(command, functions[i].f, num, line);
 			flag = 1;
-			break;
 		}
 	}
 	if (flag == 0)
