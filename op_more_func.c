@@ -22,7 +22,7 @@ void add_func(stack_t **stack, unsigned int line)
 
 	if (!stack || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short", line);
+		fprintf(stderr, "L%d: can't add, stack too short\n", line);
 		free_stack();
 		exit(EXIT_FAILURE);
 	}
@@ -45,7 +45,7 @@ void sub_func(stack_t **stack, unsigned int line)
 
 	if (!stack || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't sub, stack too short", line);
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line);
 		free_stack();
 		exit(EXIT_FAILURE);
 	}
@@ -66,7 +66,7 @@ void swap_func(stack_t **stack, unsigned int line)
 	stack_t *stack_tmp;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		fprintf(stderr, "L%d: Stack is too short\n", line);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line);
 
 	stack_tmp = (*stack)->next;
 	(*stack)->next = stack_tmp->next;
