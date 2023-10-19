@@ -15,18 +15,18 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
-		return (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 	if (argv[1])
 		file_name = argv[1];
 
 	fd = fopen(file_name, "r");
 
-	if (fd == NULL || file_name == NULL)
+	if (fd == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", file_name);
 		free_stack();
-		return (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 	excute_file(fd);
 	fclose(fd);
