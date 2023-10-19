@@ -43,7 +43,7 @@ void find_func(char *command, char *num, int line)
 	instruction_t functions[] = {
 			{"push", push_func}, {"pall", pall_func}, {"pint", pint_func},
 			{"pop", pop_from_stack}, {"swap", swap_func}, {"add", add_func},
-			{"nop", nop_func}, {"sub", sub_func}
+			{"nop", nop_func}, {"sub", sub_func}, {"div", div_func}
 		};
 
 	if (command[0] == '#')

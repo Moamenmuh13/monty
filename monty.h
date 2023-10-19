@@ -59,5 +59,6 @@ void nop_func(stack_t **stack, unsigned int line);
 void add_func(stack_t **stack, unsigned int line);
 void sub_func(stack_t **stack, unsigned int line);
 void swap_func(stack_t **stack, unsigned int line);
+void div_func(stack_t **stack, unsigned int line);
 
 #endif
