@@ -63,5 +63,6 @@ void div_func(stack_t **stack, unsigned int line);
 void mul_func(stack_t **stack, unsigned int line);
 void mod_func(stack_t **stack, unsigned int line);
 void pchar_func(stack_t **stack, unsigned int line);
+void pstr_func(stack_t **stack, unsigned int line);
 
 #endif

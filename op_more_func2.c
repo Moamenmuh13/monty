@@ -101,3 +101,34 @@ void pchar_func(stack_t **stack, unsigned int line)
 	}
 	printf("%c\n", (*stack)->n);
 }
+/**
+ * pstr_func - convert the ascii to text
+ * @stack: pointer the curret node in the stack
+ * @line: number of line
+ */
+void pstr_func(stack_t **stack, unsigned int line)
+{
+	int ascii;
+	stack_t *stack_tmp;
+
+	(void)line;
+
+	if (stack == NULL || *stack == NULL)
+	{
+		printf("\n");
+		free_stack();
+		exit(EXIT_FAILURE);
+		return;
+	}
+	stack_tmp = *stack;
+	while (stack_tmp != NULL)
+	{
+		ascii = stack_tmp->n;
+		if (ascii <= 0 || ascii > 127)
+			break;
+
+		printf("%c", ascii);
+		stack_tmp = stack_tmp->next;
+	}
+	printf("\n");
+}
