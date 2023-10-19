@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * div_func - add two numbers in stack
  * @stack: pointer the curret node in the stack
