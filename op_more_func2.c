@@ -79,3 +79,25 @@ void mod_func(stack_t **stack, unsigned int line)
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
 }
+
+/**
+ * pchar_func - prints the value at the top of the stack
+ * @stack: pointer the curret node in the stack
+ * @line: number of line
+ */
+void pchar_func(stack_t **stack, unsigned int line)
+{
+	if (stack == NULL || *stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line);
+		free_stack();
+		exit(EXIT_FAILURE);
+	}
+	if ((*stack)->n < 0 || (*stack)->n > 127)
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line);
+		free_stack();
+		exit(EXIT_FAILURE);
+	}
+	printf("%c\n", (*stack)->n);
+}
