@@ -115,8 +115,7 @@ void pop_from_stack(stack_t **stack, unsigned int line)
 	stack_tmp = *stack;
 	*stack = stack_tmp->next;
 	if (*stack != NULL)
-	{
 		(*stack)->prev = NULL;
-	}
+		
 	free(stack_tmp);
 }
