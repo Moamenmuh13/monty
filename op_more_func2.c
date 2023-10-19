@@ -39,7 +39,7 @@ void mul_func(stack_t **stack, unsigned int line)
 
 	if (!stack || *stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't div, stack too short\n", line);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line);
 		free_stack();
 		exit(EXIT_FAILURE);
 	}
