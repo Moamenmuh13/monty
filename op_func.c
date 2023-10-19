@@ -89,7 +89,7 @@ void pint_func(stack_t **stack, unsigned int line)
 {
 	if (stack == NULL || *stack == NULL)
 	{
-		fprintf(stderr, "L%d: can't print, stack is empty\n", line);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line);
 		free_stack();
 		exit(EXIT_FAILURE);
 	}

@@ -1,3 +1,3 @@
 push 3
-swap
-pall
+pop
+pint
