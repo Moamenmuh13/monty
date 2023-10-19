@@ -69,6 +69,7 @@ void find_func(char *command, char *num, int line)
 		exit(EXIT_FAILURE);
 	}
 }
+
 /**
  * excute_func - to excute the called function
  * @command: the command
