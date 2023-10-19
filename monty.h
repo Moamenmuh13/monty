@@ -40,6 +40,7 @@ typedef struct instruction_s
 extern stack_t *head;
 typedef void (*func)(stack_t **, unsigned int);
 
+/* file functions */
 void excute_file(FILE *fd);
 void find_func(char *command, char *num, int line);
 void excute_func(char *command, func function, char *num, unsigned int line);
