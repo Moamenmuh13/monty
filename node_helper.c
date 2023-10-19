@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * free_stack - free memory
  * Return: nothing in case of success
