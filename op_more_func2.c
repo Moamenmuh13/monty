@@ -116,8 +116,6 @@ void pstr_func(stack_t **stack, unsigned int line)
 	if (stack == NULL || *stack == NULL)
 	{
 		printf("\n");
-		free_stack();
-		exit(EXIT_FAILURE);
 		return;
 	}
 	stack_tmp = *stack;
