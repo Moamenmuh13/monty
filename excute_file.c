@@ -5,7 +5,7 @@
  * excute_file - to excute already opened file
  * @fd: file_discr of the opened file
  * Return: none
-*/
+ */
 void excute_file(FILE *fd)
 {
 	char *line = NULL, *command = NULL, *num = NULL;
@@ -28,7 +28,6 @@ void excute_file(FILE *fd)
 		find_func(command, num, i + 1);
 	}
 	free(line);
-
 }
 
 /**
@@ -37,15 +36,24 @@ void excute_file(FILE *fd)
  * @num: the number next to the command
  * @line: line number
  * Return: none
-*/
+ */
 void find_func(char *command, char *num, int line)
 {
-	int i, flag = 0;
-	instruction_t functions[] = {{"push", push_func}, {"pall", pall_func},
-	{"pop", pop_from_stack}, {"nop", nop_func}, {"add", add_func},
-	{"sub", sub_func}};
+	int i, flag, num_functions = 0;
+	instruction_t functions[] =
+		{
+			{"push", push_func},
+			{"pall", pall_func},
+			{"pint", pint_func},
+			{"pop", pop_from_stack},
+			{"swap", swap_func},
+			{"add", add_func},
+			{"nop", nop_func},
+			{"sub", sub_func}};
 
-	for (i = 0; i < 6; i++)
+	num_functions = sizeof(functions) / sizeof(functions[0]);
+
+	for (i = 0; i < num_functions; i++)
 	{
 		if (strcmp(functions[i].opcode, command) == 0)
 		{
@@ -68,7 +76,7 @@ void find_func(char *command, char *num, int line)
  * @num: the number next to the command
  * @line: the line number
  * Return: none
-*/
+ */
 void excute_func(char *command, func function, char *num, unsigned int line)
 {
 	if (strcmp(command, "push") == 0)

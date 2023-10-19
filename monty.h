@@ -21,9 +21,9 @@
  */
 typedef struct stack_s
 {
-		int n;
-		struct stack_s *prev;
-		struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -36,8 +36,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-		char *opcode;
-		void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 extern stack_t *head;
@@ -49,14 +49,15 @@ void excute_func(char *command, func function, char *num, unsigned int line);
 void free_stack(void);
 stack_t *create_node(int number);
 
-
 /* opcode functions */
-void push_func(stack_t **stack, unsigned int line_number);
+void push_func(stack_t **stack, unsigned int line);
 void push_func_helper(char *num, unsigned int line, func function);
-void pall_func(stack_t **stack, unsigned int line_number);
-void pop_from_stack(stack_t **stack, unsigned int line_number);
-void nop_func(stack_t **stack, unsigned int line_number);
-void add_func(stack_t **stack, unsigned int line_number);
-void sub_func(stack_t **stack, unsigned int line_number);
+void pall_func(stack_t **stack, unsigned int line);
+void pint_func(stack_t **stack, unsigned int line);
+void pop_from_stack(stack_t **stack, unsigned int line);
+void nop_func(stack_t **stack, unsigned int line);
+void add_func(stack_t **stack, unsigned int line);
+void sub_func(stack_t **stack, unsigned int line);
+void swap_func(stack_t **stack, unsigned int line);
 
 #endif

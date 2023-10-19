@@ -42,7 +42,7 @@ void push_func_helper(char *num, unsigned int line, func function)
  */
 void push_func(stack_t **stack, unsigned int line)
 {
-	stack_t *tmp;
+	stack_t *stack_tmp;
 	(void)line;
 
 	if (stack == NULL || *stack == NULL)
@@ -53,10 +53,10 @@ void push_func(stack_t **stack, unsigned int line)
 		head = *stack;
 		return;
 	}
-	tmp = head;
+	stack_tmp = head;
 	head = *stack;
-	head->next = tmp;
-	tmp->prev = head;
+	head->next = stack_tmp;
+	stack_tmp->prev = head;
 }
 
 /**
@@ -66,19 +66,36 @@ void push_func(stack_t **stack, unsigned int line)
  */
 void pall_func(stack_t **stack, unsigned int line)
 {
-	stack_t *tmp;
+	stack_t *stack_tmp;
 	(void)line;
 
 	if (stack == NULL)
 		exit(EXIT_FAILURE);
 
-	tmp = *stack;
-	while (tmp != NULL)
+	stack_tmp = *stack;
+	while (stack_tmp != NULL)
 	{
-		printf("%d\n", tmp->n);
-		tmp = tmp->next;
+		printf("%d\n", stack_tmp->n);
+		stack_tmp = stack_tmp->next;
 	}
 }
+
+/**
+ * pint_func - prints the value at the top of the stack
+ * @stack: pointer the curret node in the stack
+ * @line: number of line
+ */
+void pint_func(stack_t **stack, unsigned int line)
+{
+	if (stack == NULL || *stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't print, stack is empty\n", line);
+		free_stack();
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*stack)->n);
+}
+
 /**
  * pop_from_stack - Remove an element from the stack
  * @stack: Pointer of the pointer of the stack
@@ -86,31 +103,20 @@ void pall_func(stack_t **stack, unsigned int line)
  */
 void pop_from_stack(stack_t **stack, unsigned int line)
 {
-	stack_t *temp;
+	stack_t *stack_tmp;
 
-	if (stack == NULL || *stack != NULL)
+	if (stack == NULL || *stack == NULL)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", line);
 		free_stack();
 		exit(EXIT_FAILURE);
 	}
 
-	temp = *stack;
-	*stack = temp->next;
+	stack_tmp = *stack;
+	*stack = stack_tmp->next;
 	if (*stack != NULL)
 	{
 		(*stack)->prev = NULL;
 	}
-	free(temp);
-}
-
-/**
- * nop_func - Remove an element from the stack
- * @stack: Pointer of the pointer of the stack
- * @line: Number of the line
- */
-void nop_func(stack_t **stack, unsigned int line)
-{
-	(void)stack;
-	(void)line;
+	free(stack_tmp);
 }
