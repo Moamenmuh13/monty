@@ -61,5 +61,6 @@ void sub_func(stack_t **stack, unsigned int line);
 void swap_func(stack_t **stack, unsigned int line);
 void div_func(stack_t **stack, unsigned int line);
 void mul_func(stack_t **stack, unsigned int line);
+void mod_func(stack_t **stack, unsigned int line);
 
 #endif
