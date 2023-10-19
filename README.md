@@ -11,6 +11,11 @@ This repository contains a collection of C programs and data structures related 
 - [Contributing](#contributing)
 - [License](#license)
 
+## Introduction
+
+Stacks and queues are fundamental data structures used in computer science and programming. This repository provides examples and implementations of these data structures in the C programming language.
+
+
 ## Authors
 
 - [Moamenmuh13]
