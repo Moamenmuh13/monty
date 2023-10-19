@@ -68,6 +68,7 @@ void mod_func(stack_t **stack, unsigned int line)
 	}
 
 	*stack = (*stack)->next;
+	if ((*stack)->prev->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line);
 		free_stack();
