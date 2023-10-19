@@ -16,6 +16,7 @@ void free_stack(void)
 		free(temp);
 	}
 }
+
 /**
  * create_node - create a new node
  * @number: the number inside the node
