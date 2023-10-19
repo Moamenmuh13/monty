@@ -1,3 +1,3 @@
-push 3
-pop
-pint
+
+add 3
+pall
