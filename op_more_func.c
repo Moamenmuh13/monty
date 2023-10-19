@@ -56,6 +56,7 @@ void sub_func(stack_t **stack, unsigned int line)
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
 }
+
 /**
  * swap_func - swap two elements from the stack
  * @stack: pointer the curret node in the stack
