@@ -79,9 +79,7 @@ void find_func(char *command, char *num, int line)
 void excute_func(char *command, func function, char *num, unsigned int line)
 {
 	if (strcmp(command, "push") == 0)
-	{
 		push_func_helper(num, line, function);
-	}
 	else
 		function(&head, line);
 }
