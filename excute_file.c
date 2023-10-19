@@ -20,10 +20,10 @@ void excute_file(FILE *fd)
 			free_stack();
 			exit(EXIT_FAILURE);
 		}
-		command = strtok(line, " \n");
+		command = strtok(line, "\n ");
 		if (command == NULL)
 			return;
-		num = strtok(NULL, " \n");
+		num = strtok(NULL, "\n ");
 
 		find_func(command, num, i + 1);
 	}
@@ -45,7 +45,9 @@ void find_func(char *command, char *num, int line)
 			{"pop", pop_from_stack}, {"swap", swap_func}, {"add", add_func},
 			{"nop", nop_func}, {"sub", sub_func}
 		};
-
+	
+	if (command[0] == '#')
+		return;
 	num_functions = sizeof(functions) / sizeof(functions[0]);
 
 	for (i = 0; i < num_functions; i++)
