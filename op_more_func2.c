@@ -27,3 +27,26 @@ void div_func(stack_t **stack, unsigned int line)
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
 }
+
+/**
+ * mul_func - add two numbers in stack
+ * @stack: pointer the curret node in the stack
+ * @line: number of line
+ */
+void mul_func(stack_t **stack, unsigned int line)
+{
+	int result = 0;
+
+	if (!stack || *stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't div, stack too short\n", line);
+		free_stack();
+		exit(EXIT_FAILURE);
+	}
+
+	*stack = (*stack)->next;
+	result = (*stack)->n * (*stack)->prev->n;
+	(*stack)->n = result;
+	free((*stack)->prev);
+	(*stack)->prev = NULL;
+}
