@@ -8,9 +8,7 @@ void free_stack(void)
 	stack_t *temp;
 
 	if (!head)
-	{
 		return;
-	}
 	while (head != NULL)
 	{
 		temp = head;
