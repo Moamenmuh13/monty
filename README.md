@@ -21,13 +21,10 @@ To use or explore the provided code and examples, follow these steps:
 
 git clone https://github.com/Moamenmuh13/monty.git
 
+for compile the C program: 
+$ gcc -Wall -Werror -Wextra -pedantic -std=c89 *.c -o monty
 
 
-## Contributing
-Contributions to this repository are welcome. If you have improvements, bug fixes, or additional examples related to stacks and queues in C, please feel free to submit a pull request.
-
-## License
-This project is open-source and available under the MIT License. You are free to use and modify the code for your own projects.
 
 
 ## Authors
