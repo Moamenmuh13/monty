@@ -23,6 +23,9 @@ git clone https://github.com/Moamenmuh13/monty.git
 
 
 
+## Contributing
+Contributions to this repository are welcome. If you have improvements, bug fixes, or additional examples related to stacks and queues in C, please feel free to submit a pull request.
+
 
 
 ## Authors
