@@ -83,7 +83,5 @@ void excute_func(char *command, func function, char *num, unsigned int line)
 		push_func_helper(num, line, function);
 	}
 	else
-	{
 		function(&head, line);
-	}
 }
