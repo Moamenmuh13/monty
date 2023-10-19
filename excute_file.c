@@ -22,7 +22,7 @@ void excute_file(FILE *fd)
 		}
 		command = strtok(line, "\n ");
 		if (command == NULL)
-			return;
+			continue;
 		num = strtok(NULL, "\n ");
 
 		find_func(command, num, i + 1);
