@@ -40,16 +40,11 @@ void excute_file(FILE *fd)
 void find_func(char *command, char *num, int line)
 {
 	int i, flag, num_functions = 0;
-	instruction_t functions[] =
-		{
-			{"push", push_func},
-			{"pall", pall_func},
-			{"pint", pint_func},
-			{"pop", pop_from_stack},
-			{"swap", swap_func},
-			{"add", add_func},
-			{"nop", nop_func},
-			{"sub", sub_func}};
+	instruction_t functions[] = {
+			{"push", push_func}, {"pall", pall_func}, {"pint", pint_func},
+			{"pop", pop_from_stack}, {"swap", swap_func}, {"add", add_func},
+			{"nop", nop_func}, {"sub", sub_func}
+		};
 
 	num_functions = sizeof(functions) / sizeof(functions[0]);
 
@@ -75,7 +70,6 @@ void find_func(char *command, char *num, int line)
  * @function: the function for the found command
  * @num: the number next to the command
  * @line: the line number
- * Return: none
  */
 void excute_func(char *command, func function, char *num, unsigned int line)
 {
