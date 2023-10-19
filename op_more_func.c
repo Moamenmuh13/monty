@@ -20,7 +20,7 @@ void add_func(stack_t **stack, unsigned int line)
 {
 	int sum = 0;
 
-	if (!stack || (*stack)->next == NULL)
+	if (!stack || (*stack)->next == NULL || *stack == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short", line);
 		free_stack();
