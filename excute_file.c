@@ -41,10 +41,12 @@ void find_func(char *command, char *num, int line)
 {
 	int i, flag = 0, num_functions = 0;
 	instruction_t functions[] = {
-			{"push", push_func}, {"pall", pall_func}, {"pint", pint_func},
-			{"pop", pop_from_stack}, {"swap", swap_func}, {"add", add_func},
-			{"nop", nop_func}, {"sub", sub_func}, {"div", div_func},
-			{"mul", mul_func}, {"mod", mod_func}, {"pchar", pchar_func},
+			{"push", push_func}, {"pall", pall_func},
+			{"pint", pint_func}, {"pop", pop_from_stack},
+			{"swap", swap_func}, {"add", add_func},
+			{"nop", nop_func}, {"sub", sub_func},
+			{"div", div_func}, {"mul", mul_func},
+			{"mod", mod_func}, {"pchar", pchar_func},
 			{"pstr", pstr_func}
 		};
 
